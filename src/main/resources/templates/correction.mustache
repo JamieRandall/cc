@@ -1,0 +1,72 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Change</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<div>
+    <form method="post">
+        <table>
+            <tr>
+                <th>Channel</th>
+                <th>New frequency</th>
+                <th>New polarization value</th>
+            </tr>
+            <tr>
+                <td>
+                    <select name="channel">
+                        <option>...</option>
+                        {{#channels}}
+                            <option>{{name}}</option>
+                        {{/channels}}
+                    </select>
+                </td>
+                <td>
+                    <input name="frequency" placeholder="0.00">
+                </td>
+                <td>
+                    <input name="polarization" placeholder="0.00">
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    <input type="checkbox" name="store">
+                    <label for="store">Store</label>
+                </th>
+                <td>
+
+                </td>
+                <td>
+                    <button type="submit">SUBMIT</button>
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>
+<div>
+    <table>
+        <tr>
+            <th>Id</th>
+            <th>Channel</th>
+            <th>Frequency</th>
+            <th>Polarization</th>
+            <th>Satellites</th>
+        </tr>
+        {{#channels}}
+            <tr>
+                <td>{{id}}</td>
+                <td>{{name}}</td>
+                <td>{{frequency}}</td>
+                <td>{{polarizaionValue}}</td>
+                <td>
+                    {{#satellites}}
+                        {{name}}.
+                    {{/satellites}}
+                </td>
+            </tr>
+        {{/channels}}
+    </table>
+</div>
+</body>
+</html>
