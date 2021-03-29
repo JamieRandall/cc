@@ -5,11 +5,34 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
 <body>
+<form action="/" method="get">
+    <button type="submit">HOME</button>
+</form>
 <div>
-    {{#users}}
-        <b>{{name}}</b>
-        <b>{{password}}</b>
-    {{/users}}
+    <form method="post">
+        <label for="name">User name</label>
+        <input type="text" name="name">
+        <label for="pswd">Password</label>
+        <input type="text" name="pswd">
+        <button type="submit">CREATE USER</button>
+    </form>
+</div>
+<h1>
+    USERS IN SYSTEM:
+</h1>
+<div>
+    <table>
+        <tr>
+            <th>USER NAME</th>
+            <th>PASSWORD</th>
+        </tr>
+        {{#users}}
+            <tr>
+                <td>{{name}}</td>
+                <td>{{password}}</td>
+            </tr>
+        {{/users}}
+    </table>
 </div>
 </body>
 </html>

@@ -8,13 +8,13 @@ import org.springframework.web.bind.annotation.RequestParam;
 import java.util.Map;
 
 @Controller
-public class HelloController {
+public class IndexController {
 
     @GetMapping("/")
     public String getHello(@RequestParam(name = "name", required = false, defaultValue = "World") String name,
                            Map<String, Object> model) {
         model.put("name", name);
-        return "greetings";
+        return "index";
     }
 
 }

@@ -17,7 +17,7 @@ public class CorrectionController {
     @GetMapping("/correct")
     public String getCorrectionPage(Map<String, Object> model) {
         model.put("channels", unitedService.getChannels());
-        model.put("status", "no status");
+        model.put("status", "0");
 
         return "correction";
     }

@@ -1,10 +1,13 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-    <title>Change</title>
+    <title>LOGS</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
 <body>
+<form action="/" method="get">
+    <button type="submit">HOME</button>
+</form>
 <div>
     <form method="post">
         <table>
@@ -56,25 +59,21 @@
 <div>
     <table>
         <tr>
-            <th>Id</th>
-            <th>Channel</th>
-            <th>Frequency</th>
-            <th>Polarization</th>
-            <th>Satellites</th>
+            <th>CHANNEL</th>
+            <th>USER</th>
+            <th>FREQUENCY</th>
+            <th>POLARIZATION</th>
+            <th>CREATED</th>
         </tr>
-        {{#channels}}
+        {{#logs}}
             <tr>
-                <td>{{id}}</td>
-                <td>{{name}}</td>
-                <td>{{frequency}}</td>
-                <td>{{polarizaionValue}}</td>
-                <td>
-                    {{#satellites}}
-                        {{name}}.
-                    {{/satellites}}
-                </td>
+                <td>{{channel.name}}</td>
+                <td>{{cc_user.name}}</td>
+                <td>{{newFrequency}}</td>
+                <td>{{newPolarizationValue}}</td>
+                <td>{{created}}</td>
             </tr>
-        {{/channels}}
+        {{/logs}}
     </table>
 </div>
 </body>

@@ -1,4 +1,4 @@
-package ru.gov.rkn.model;
+package ru.gov.rkn.model.database;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

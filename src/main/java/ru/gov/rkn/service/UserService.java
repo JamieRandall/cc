@@ -2,25 +2,24 @@ package ru.gov.rkn.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import ru.gov.rkn.model.User;
+import ru.gov.rkn.model.database.User;
 import ru.gov.rkn.repository.UserRepository;
-
-import java.util.List;
-import java.util.Map;
 
 @Service
 public class UserService {
     @Autowired
     private UserRepository userRepository;
 
-    public Iterable<User> getUsers(String name) {
+    public Iterable<User> getUsers() {
         return userRepository.findAll();
     }
 
-    public void saveUser() {
-        User user = new User();
-        user.setName("Jack");
-        user.setPassword("1");
+    public void saveUser(String name, String pswd) {
+        User user = User.builder()
+                .name(name)
+                .password(pswd)
+                .build();
+
         userRepository.save(user);
     }
 }

@@ -1,39 +1,33 @@
-package ru.gov.rkn.model;
+package ru.gov.rkn.model.database;
+
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import ru.gov.rkn.model.database.Refresh;
+import ru.gov.rkn.model.database.Log;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import java.util.List;
 
 @Data
 @Builder
+@Entity(name = "cc_user")
 @AllArgsConstructor
 @NoArgsConstructor
-@Entity
-public class Channel {
+public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
     private String name;
 
-    private double frequency;
+    private String password;
 
-    private double polarizaionValue;
-
-    @ManyToMany(mappedBy = "channels", cascade = CascadeType.MERGE)
-    List<Satellite> satellites;
-
-    @OneToMany(mappedBy = "channel")
-    private List<Refresh> refreshes;
+    @OneToMany(mappedBy = "cc_user")
+    private List<Log> logs;
 }

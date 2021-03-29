@@ -1,10 +1,9 @@
 package ru.gov.rkn.repository;
 
-import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
-import ru.gov.rkn.model.Channel;
+import ru.gov.rkn.model.database.Channel;
 
 import java.util.List;
 import java.util.Optional;

@@ -1,0 +1,98 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>CHANNELS</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<form action="/" method="get">
+    <button type="submit">HOME</button>
+</form>
+<!--<div>-->
+<!--    <form method="post">-->
+<!--        <table>-->
+<!--            <tr>-->
+<!--                <th>Channel</th>-->
+<!--                <th>User</th>-->
+<!--                <th>Sort</th>-->
+<!--            </tr>-->
+<!--            <tr>-->
+<!--                <td>-->
+<!--                    <select name="channel">-->
+<!--                        <option>...</option>-->
+<!--                        {{#channels}}-->
+<!--                            <option>{{name}}</option>-->
+<!--                        {{/channels}}-->
+<!--                    </select>-->
+<!--                </td>-->
+<!--                <td>-->
+<!--                    <select name="user">-->
+<!--                        <option>...</option>-->
+<!--                        {{#users}}-->
+<!--                            <option>{{name}}</option>-->
+<!--                        {{/users}}-->
+<!--                    </select>-->
+<!--                </td>-->
+<!--                <td>-->
+
+<!--                </td>-->
+<!--            </tr>-->
+<!--            <tr>-->
+<!--                <th>-->
+<!--                    <input type="checkbox" name="store">-->
+<!--                    <label for="store">Store</label>-->
+<!--                </th>-->
+<!--                <td>-->
+
+<!--                </td>-->
+<!--                <td>-->
+<!--                    <button type="submit">GET</button>-->
+<!--                </td>-->
+<!--            </tr>-->
+<!--        </table>-->
+<!--    </form>-->
+<!--</div>-->
+<div>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>CHANNEL</th>
+            <th>TYPE</th>
+            <th>SATELLITE</th>
+            <th>FREQUENCY</th>
+            <th>FLOW RATE</th>
+            <th>POLAR</th>
+            <th>ENCODING</th>
+            <th>LANGUAGE</th>
+            <th>COUNTRY</th>
+            <th>BROADCAST BEGAN</th>
+            <th>BROADCAST CONFIRMED</th>
+            <th>ACTIVE</th>
+            <th>DESCRIPTION</th>
+        </tr>
+        {{#channels}}
+            <tr>
+                <td>{{id}}</td>
+                <td>{{name}}</td>
+                <td>{{type}}</td>
+                <td>
+                    satellite
+                </td>
+                <td>{{frequency}}</td>
+                <td>{{flowRate}}</td>
+                <td>{{polarization}}</td>
+                <td>{{encoding}}</td>
+                <td>
+                    language
+                </td>
+                <td>{{country}}</td>
+                <td>{{broadcastBegan}}</td>
+                <td>{{broadcastConfirmed}}</td>
+                <td>{{isBroadcasted}}</td>
+                <td>{{description}}</td>
+            </tr>
+        {{/channels}}
+    </table>
+</div>
+</body>
+</html>
