@@ -3,6 +3,7 @@
 <head>
     <title>Change</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <script src="script.js" type="text/javascript"></script>
 </head>
 <body>
 <div>
@@ -16,7 +17,7 @@
             <tr>
                 <td>
                     <select name="channel">
-                        <option>...</option>
+<!--                        <option>...</option>-->
                         {{#channels}}
                             <option>{{name}}</option>
                         {{/channels}}
@@ -31,20 +32,23 @@
             </tr>
             <tr>
                 <th>
-                    <input type="checkbox" name="store">
-                    <label for="store">Store</label>
+<!--                    <input type="checkbox" name="save">-->
+<!--                    <label for="save">Save</label>-->
                 </th>
                 <td>
 
                 </td>
                 <td>
-                    <button type="submit">SUBMIT</button>
+                    <button type="submit">SAVE</button>
                 </td>
             </tr>
         </table>
     </form>
 </div>
-<div>
+<div id="status" hidden="true">
+    {{status}}
+</div>
+<div hidden="true">
     <table>
         <tr>
             <th>Id</th>
