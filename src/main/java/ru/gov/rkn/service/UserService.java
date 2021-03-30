@@ -16,7 +16,7 @@ public class UserService {
 
     public void saveUser(String name, String pswd) {
         User user = User.builder()
-                .name(name)
+                .username(name)
                 .password(pswd)
                 .build();
 

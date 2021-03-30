@@ -29,7 +29,7 @@ public class LogsService {
         logRepository.findAll().forEach(fromDB::add);
         fromDB.stream()
                 .filter(l -> {
-                    return l.getChannel().getName().equals(channelName) && l.getCc_user().getName().equals(userName) ? true : false;
+                    return l.getChannel().getName().equals(channelName) && l.getCc_user().getUsername().equals(userName) ? true : false;
                 })
                 .forEach(logs::add);
 

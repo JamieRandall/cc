@@ -65,8 +65,8 @@
             <th>ENCODING</th>
             <th>LANGUAGE</th>
             <th>COUNTRY</th>
-            <th>BROADCAST BEGAN</th>
-            <th>BROADCAST CONFIRMED</th>
+            <th>BEGAN</th>
+            <th>CONFIRMED</th>
             <th>ACTIVE</th>
             <th>DESCRIPTION</th>
         </tr>
@@ -83,7 +83,9 @@
                 <td>{{polarization}}</td>
                 <td>{{encoding}}</td>
                 <td>
-                    language
+                    {{#language?}}
+                        {{language}}
+                    {{/language?}}
                 </td>
                 <td>{{country}}</td>
                 <td>{{broadcastBegan}}</td>

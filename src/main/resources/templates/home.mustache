@@ -5,18 +5,26 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
 <body>
+<form action="/logout" method="post">
+    <input type="submit" value="Sign Out"/>
+    <input type="hidden" name="_csrf" value="{{_csrf.token}}"/>
+</form>
 <div>
     <form action="/channels" method="get">
         <button type="submit">CHANNELS</button>
+        <input type="hidden" name="_csrf" value="{{_csrf.token}}"/>
     </form>
     <form action="/users" method="get">
         <button type="submit">USERS</button>
+        <input type="hidden" name="_csrf" value="{{_csrf.token}}"/>
     </form>
     <form action="/correct" method="get">
         <button type="submit">CHANNEL</button>
+        <input type="hidden" name="_csrf" value="{{_csrf.token}}"/>
     </form>
     <form action="/logs" method="get">
         <button type="submit">LOGS</button>
+        <input type="hidden" name="_csrf" value="{{_csrf.token}}"/>
     </form>
 </div>
 </body>
