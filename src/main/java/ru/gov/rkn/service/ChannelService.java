@@ -14,4 +14,8 @@ public class ChannelService {
     public Iterable<Channel> findAll() {
         return channelRepository.findAll();
     }
+
+    public Channel findChannel(String channelName) {
+        return channelRepository.findChannelByName(channelName).get();
+    }
 }

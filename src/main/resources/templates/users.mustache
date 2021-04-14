@@ -9,11 +9,18 @@
     <button type="submit">HOME</button>
 </form>
 <div>
-    <form method="post">
-        <label for="name">User name</label>
-        <input type="text" name="name">
+    <form method="post" action="/users/create">
+        <label for="username">User name</label>
+        <input type="text" name="login">
         <label for="pswd">Password</label>
-        <input type="text" name="pswd">
+        <input type="text" name="password">
+        <select name="role">
+            {{#roles}}
+                <option>
+                    {{.}}
+                </option>
+            {{/roles}}
+        </select>
         <button type="submit">CREATE USER</button>
     </form>
 </div>
@@ -25,11 +32,15 @@
         <tr>
             <th>USER NAME</th>
             <th>PASSWORD</th>
+            <th>ROLE</th>
+            <th>STATE</th>
         </tr>
         {{#users}}
             <tr>
-                <td>{{name}}</td>
-                <td>{{password}}</td>
+                <td>{{login}}</td>
+                <td>{{hashPassword}}</td>
+                <td>{{role}}</td>
+                <td>{{state}}</td>
             </tr>
         {{/users}}
     </table>

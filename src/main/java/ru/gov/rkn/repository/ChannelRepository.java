@@ -10,7 +10,6 @@ import java.util.Optional;
 
 @Repository
 public interface ChannelRepository extends CrudRepository<Channel, Integer> {
-//    Page<Channel> findAllBy
     Optional<Channel> findChannelByName(String name);
 
     List<Channel> findAll(Sort sort);

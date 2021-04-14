@@ -23,13 +23,13 @@ public class LogsService {
     }
 
 
-    public Set<Log> findLogsByChannelAndUser(String channelName, String userName) {
+    public Set<Log> findLogsByChannelAndUser(String channelName, String login) {
         Set<Log> logs = new TreeSet<>();
         List<Log> fromDB = new ArrayList<>();
         logRepository.findAll().forEach(fromDB::add);
         fromDB.stream()
                 .filter(l -> {
-                    return l.getChannel().getName().equals(channelName) && l.getCc_user().getUsername().equals(userName) ? true : false;
+                    return l.getChannel().getName().equals(channelName) && l.getCc_user().getLogin().equals(login) ? true : false;
                 })
                 .forEach(logs::add);
 

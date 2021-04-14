@@ -7,6 +7,8 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import ru.gov.rkn.model.database.Log;
 import ru.gov.rkn.model.enums.UserRole;
+import ru.gov.rkn.model.enums.UserState;
+import ru.gov.rkn.model.form.UserForm;
 
 import javax.persistence.*;
 import java.util.List;
@@ -22,17 +24,24 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    private String username;
+    private String login;
+    private String hashPassword;
 
-    private String password;
-
-    @ElementCollection(targetClass = UserRole.class, fetch = FetchType.EAGER)
-    @CollectionTable(name = "user_role", joinColumns = @JoinColumn(name = "user_id"))
     @Enumerated(EnumType.STRING)
-    private Set<UserRole> roles;
+    private UserRole role;
 
-    private boolean isActive;
+    @Enumerated(EnumType.STRING)
+    private UserState state;
 
     @OneToMany(mappedBy = "cc_user")
     private List<Log> logs;
+
+    public static User fromForm(UserForm userForm) {
+        return User.builder()
+                .login(userForm.getLogin())
+                .hashPassword(userForm.getPassword())
+                .role(UserRole.valueOf(userForm.getRole()))
+                .state(UserState.ACTIVE)
+                .build();
+    }
 }

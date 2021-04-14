@@ -2,6 +2,7 @@ package ru.gov.rkn.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -20,12 +21,12 @@ public class LogController {
     private LogsService logsService;
 
     @GetMapping("/logs")
-    public String getLogs(Map<String, Object> model) {
+    public String getLogs(ModelMap model) {
         Set<Log> logs = logsService.getLogs();
 
-        model.put("logs", logs);
+        model.addAttribute("logs", logs);
 
-        return "logs";
+        return "logs.ftlh";
     }
 
     @PostMapping("/logs")
@@ -41,6 +42,6 @@ public class LogController {
 //        model.put("channels", channels);
 //        model.put("users", users);
 
-        return "logs";
+        return "logs.ftlh";
     }
 }

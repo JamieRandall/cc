@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import ru.gov.rkn.model.enums.LanguageCaption;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
@@ -20,7 +21,8 @@ public class Language {
     private Integer id;
 
     @NotNull
-    private String caption;
+    @Enumerated(EnumType.STRING)
+    private LanguageCaption caption;
 
     @ManyToMany(cascade = CascadeType.MERGE)
     @JoinTable(
